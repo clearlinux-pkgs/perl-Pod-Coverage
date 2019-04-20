@@ -4,10 +4,10 @@
 #
 Name     : perl-Pod-Coverage
 Version  : 0.23
-Release  : 8
+Release  : 9
 URL      : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-0.23.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-0.23.tar.gz
-Summary  : ~
+Summary  : Checks if the documentation of a module is comprehensive
 Group    : Development/Tools
 License  : Artistic-1.0-Perl GPL-1.0+
 Requires: perl-Pod-Coverage-bin = %{version}-%{release}
@@ -30,6 +30,7 @@ Summary: dev components for the perl-Pod-Coverage package.
 Group: Development
 Requires: perl-Pod-Coverage-bin = %{version}-%{release}
 Provides: perl-Pod-Coverage-devel = %{version}-%{release}
+Requires: perl-Pod-Coverage = %{version}-%{release}
 
 %description dev
 dev components for the perl-Pod-Coverage package.
