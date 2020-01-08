@@ -4,13 +4,14 @@
 #
 Name     : perl-Pod-Coverage
 Version  : 0.23
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-0.23.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-0.23.tar.gz
-Summary  : Checks if the documentation of a module is comprehensive
+Summary  : ~
 Group    : Development/Tools
 License  : Artistic-1.0-Perl GPL-1.0+
 Requires: perl-Pod-Coverage-bin = %{version}-%{release}
+Requires: perl-Pod-Coverage-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Devel::Symdump)
 
@@ -36,14 +37,24 @@ Requires: perl-Pod-Coverage = %{version}-%{release}
 dev components for the perl-Pod-Coverage package.
 
 
+%package perl
+Summary: perl components for the perl-Pod-Coverage package.
+Group: Default
+Requires: perl-Pod-Coverage = %{version}-%{release}
+
+%description perl
+perl components for the perl-Pod-Coverage package.
+
+
 %prep
 %setup -q -n Pod-Coverage-0.23
+cd %{_builddir}/Pod-Coverage-0.23
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -53,7 +64,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -73,10 +84,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Pod/Coverage.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Pod/Coverage/CountParents.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Pod/Coverage/ExportOnly.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Pod/Coverage/Overloader.pm
 
 %files bin
 %defattr(-,root,root,-)
@@ -88,3 +95,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Pod::Coverage::CountParents.3
 /usr/share/man/man3/Pod::Coverage::ExportOnly.3
 /usr/share/man/man3/Pod::Coverage::Overloader.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Pod/Coverage.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Pod/Coverage/CountParents.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Pod/Coverage/ExportOnly.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Pod/Coverage/Overloader.pm
