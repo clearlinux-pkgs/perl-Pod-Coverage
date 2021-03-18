@@ -4,7 +4,7 @@
 #
 Name     : perl-Pod-Coverage
 Version  : 0.23
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-0.23.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-0.23.tar.gz
 Summary  : ~
@@ -12,8 +12,10 @@ Group    : Development/Tools
 License  : Artistic-1.0-Perl GPL-1.0+
 Requires: perl-Pod-Coverage-bin = %{version}-%{release}
 Requires: perl-Pod-Coverage-perl = %{version}-%{release}
+Requires: perl(Pod::Parser)
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Devel::Symdump)
+BuildRequires : perl(Pod::Parser)
 
 %description
 No detailed description available
