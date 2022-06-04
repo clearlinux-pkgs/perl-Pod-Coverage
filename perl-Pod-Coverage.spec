@@ -4,7 +4,7 @@
 #
 Name     : perl-Pod-Coverage
 Version  : 0.23
-Release  : 15
+Release  : 16
 URL      : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-0.23.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-0.23.tar.gz
 Summary  : ~
@@ -100,7 +100,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Pod/Coverage.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Pod/Coverage/CountParents.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Pod/Coverage/ExportOnly.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Pod/Coverage/Overloader.pm
+/usr/lib/perl5/*
