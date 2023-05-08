@@ -4,7 +4,7 @@
 #
 Name     : perl-Pod-Coverage
 Version  : 0.23
-Release  : 17
+Release  : 18
 URL      : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-0.23.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-0.23.tar.gz
 Summary  : ~
